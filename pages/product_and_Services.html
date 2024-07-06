@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../src/slide/slider.css">
+    <style>
+        .mainSlider2 {
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .mainSlider3 {
+            width: 70%;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .mainSlider {
+            width: 55%;
+        }
+
+        .major {
+            width: 40%;
+            text-align: justify;
+        }
+
+        .major2 {
+            width: 100%;
+            text-align: justify;
+        }
+
+        @media screen and (max-width:468px) {
+            .mainSlider2 {
+                flex-direction: column;
+            }
+
+            .mainSlider,
+            .mainSlider3,
+            .major {
+                width: 100%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <!-- <div class="movable-div"></div> -->
+        <div class="mobileMenu">
+            <button id="closeMenu">X Close</button>
+            <a class='item' href="../index.html">Home</a>
+            <a class='item' href="./aboutus.html">About us</a>
+            <a class='item' href="./contactus.html"">Contact</a>
+            <a class='item' href=" ./product_and_Services.html">Product and Service</a>
+            <a class='item'> How we work</a>
+            <a class='item' href="./faq.html">FAQ</a>
+            <a class='item' href="./earn_with_us.html">Earn with us</a>
+        </div>
+        <Navbar>
+            <div class="mainNav2" id="mainNav2">
+                <div class='mainNav' id='mainNav'>
+                    <div><img src="../assets/images/logo1.png"
+                            style="width:110px; height:60px; margin-top: 5px; margin-left: 10px;">
+                    </div>
+                    <div class='menulist'>
+                        <a class='item' href="../index.html">Home</a>
+                        <a class='item' href="./aboutus.html">About us</a>
+                        <a class='item' href="./contactus.html"">Contact</a>
+                        <a class='item' href=" ./product_and_Services.html">Product and Service</a>
+                        <a class='item'> How we work</a>
+                        <a class='item' href=" ./faq.html">FAQ</a>
+                        <a class='item' href="./earn_with_us.html">Earn with us</a>
+                    </div>
+                    <div class='mobileIcon'>Menu</div>
+                </div>
+            </div>
+        </Navbar>
+    </header>
+    <div>
+        <div class="mainSlider2" id="content">
+            <div class="mainSlider" id="mainSlider">
+                <img src="../assets/images/logo1.png"
+                    style="width:200px; height:150px; margin-top: 5px; margin-left: 10px;">
+
+                <b style="text-align: center; background-color: yellow; padding: 10px;">Blending Innovation, Creativity
+                    and
+                    Satisfaction</b>
+            </div>
+            <div class="major">
+                <div class="major2">
+                    <h1>Our Service</h1>
+                    <p>Our variety of service includes:</p>
+                    <h5>IT Services</h5>
+                    <ul>
+                        <li>Web Design and development</li>
+                        <li>front and backend design</li>
+                        <li>Game development</li>
+                        <li>Data analysis and visualization</li>
+                        <li>Mobile application design</li>
+                        <li>3D Modelling with blender</li>
+                    </ul>
+
+                    <h5>Graphics and Printing Services</h5>
+                    <ul>
+                        <li>Graphic Design</li>
+                        <li>Logo Design</li>
+                        <li>E-flyers</li>
+                        <li>Roll-up Banners</li>
+                        <li>DI Printing</li>
+                        <li>General Printing</li>
+                    </ul>
+
+                    <h5>Educational and Training programmes</h5>
+                    <ul>
+                        <li>Graphic Design Training</li>
+                        <li>Web design Training</li>
+                        <li>3d Modelling Training</li>
+                    </ul>
+
+                    <h5>Supply and Distribution</h5>
+                    <ul>
+                        <li>Conputer systems and accessories</li>
+                        <li>Electronic equipment and gadget</li>
+                        <li>Other Items and materials of home and office use</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+        <h1>Available Products</h1>
+    </div>
+    <script>
+        var Slider = document.getElementById('mainSlider');
+
+        Slider.style.backgroundImage = "url('../assets/images/products.jpg')";
+        Slider.style.backgroundSize = 'cover';
+        Slider.style.backgroundPosition = 'center'
+
+
+    </script>
+    <script type="module" src="pageslider.js"></script>
+</body>
+
+</html>

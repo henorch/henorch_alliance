@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../src/slide/slider.css">
+    <style>
+        .mainSlider2 {
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .mainSlider {
+            width: 55%;
+        }
+
+        .major {
+            width: 40%;
+            text-align: justify;
+        }
+
+        .major2 {
+            width: 100%;
+            text-align: justify;
+        }
+
+        @media screen and (max-width:468px) {
+            .mainSlider2 {
+                flex-direction: column;
+            }
+
+            .mainSlider,
+            .major {
+                width: 100%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <!-- <div class="movable-div"></div> -->
+        <div class="mobileMenu">
+            <button id="closeMenu">X Close</button>
+            <a class='item' href="../index.html">Home</a>
+            <a class='item' href="./aboutus.html">About us</a>
+            <a class='item' href="./contactus.html"">Contact</a>
+            <a class='item' href=" ./product_and_Services.html">Product and Service</a>
+            <a class='item'> How we work</a>
+            <a class='item' href="./faq.html">FAQ</a>
+            <a class='item' href="./earn_with_us.html">Earn with us</a>
+        </div>
+        <Navbar>
+            <div class="mainNav2" id="mainNav2">
+                <div class='mainNav' id='mainNav'>
+                    <div><img src="../assets/images/logo1.png"
+                            style="width:110px; height:60px; margin-top: 5px; margin-left: 10px;">
+                    </div>
+                    <div class='menulist'>
+                        <a class='item' href="../index.html">Home</a>
+                        <a class='item' href="./aboutus.html">About us</a>
+                        <a class='item' href="./contactus.html"">Contact</a>
+                        <a class='item' href=" ./product_and_Services.html">Product and Service</a>
+                        <a class='item'> How we work</a>
+                        <a class='item' href=" ./faq.html">FAQ</a>
+                        <a class='item' href="./earn_with_us.html">Earn with us</a>
+                    </div>
+                    <div class='mobileIcon'>Menu</div>
+                </div>
+            </div>
+        </Navbar>
+    </header>
+    <div class="mainSlider2" id="content">
+        <div class="mainSlider" id="mainSlider">
+            <img src="../assets/images/logo1.png"
+                style="width:200px; height:150px; margin-top: 5px; margin-left: 10px;">
+
+            <b style="text-align: center; background-color: yellow; padding: 10px;">Blending Innovation, Creativity and
+                Satisfaction</b>
+        </div>
+        <div class="major">
+            <div class="major2">
+
+                <h1>Contact us</h1>
+                <div>
+                    <h3>Office</h3>
+                    <p>We are located at
+                    <address> 34, Ipamesan road, Anishere/Ago Joju b/stop, Sango Ota, Ogun State, Nigeria </address>
+                    </p>
+                </div>
+
+                <div style="margin: 20px;">
+                    <b>Hotlines</b>
+                    <i>call only</i>
+                    <address>07033407608</address>
+                    <address>09127723112</address>
+                </div>
+
+                <div style="margin: 20px;">
+                    <b>WhatApp</b>
+                    <address>07033407608</address>
+                    <address>09127723112</address>
+                </div>
+                <div style="margin: 20px;">
+                    <b>Email</b>
+                    <address>henorchAlliance@gmail.com</address>
+                    <address>henorch01@gmail.com</address>
+                </div>
+
+                <div style="margin: 20px;">
+                    <b>Join our Telegram and whatsapp</b>
+                    <address>henorchAlliance@gmail.com</address>
+                    <address>henorch01@gmail.com</address>
+                </div>
+
+                <div style="margin: 20px;">
+                    <b>Follow Us</b>
+                    <button>Facebook</button>
+                    <button>Instagram</button>
+                    <button title="formerly twitter">x</button>
+                </div>
+            </div>
+            <div class="major2">
+                <h1>Our Guide</h1>
+                <p style="text-align: justify;">Our aim is to render unique service that make our customers to feel
+                    satisfied, we work on daily bases to
+                    improve our services, with great focus on customer satisfaction, Being a customer oriented
+                    organization,
+                    we implement crerativity and innovation into our diverse services, Believe in satisfaction first
+                    that is
+                    why we do everything to make our customers happy and satisfied, @ HenOrch Alliance we are committed
+                    to
+                    satisfying your needs,</p>
+                <b style="text-align: end;">so visit us today @ HenOrch Alliance</b>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var Slider = document.getElementById('mainSlider');
+
+        Slider.style.backgroundImage = "url('../assets/images/contact.webp')";
+        Slider.style.backgroundSize = 'cover';
+        Slider.style.backgroundPosition = 'center'
+
+
+    </script>
+    <script type="module" src="pageslider.js"></script>
+</body>
+
+</html>

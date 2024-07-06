@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../src/slide/slider.css">
+    <style>
+        .mainSlider2 {
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .mainSlider {
+            width: 55%;
+        }
+
+        .major {
+            width: 40%;
+            text-align: justify;
+        }
+
+        .major2 {
+            width: 100%;
+            text-align: justify;
+        }
+
+        @media screen and (max-width:468px) {
+            .mainSlider2 {
+                flex-direction: column;
+            }
+
+            .mainSlider,
+            .major {
+                width: 100%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <!-- <div class="movable-div"></div> -->
+        <div class="mobileMenu">
+            <button id="closeMenu">X Close</button>
+            <a class='item' href="../index.html">Home</a>
+            <a class='item' href="./aboutus.html">About us</a>
+            <a class='item' href="./contactus.html"">Contact</a>
+        <a class='item' href=" ./product_and_Services.html">Product and Service</a>
+            <a class='item'> How we work</a>
+            <a class='item' href="./faq.html">FAQ</a>
+            <a class='item' href="./earn_with_us.html">Earn with us</a>
+        </div>
+        <Navbar>
+            <div class="mainNav2" id="mainNav2">
+                <div class='mainNav' id='mainNav'>
+                    <div><img src="../assets/images/logo1.png"
+                            style="width:110px; height:60px; margin-top: 5px; margin-left: 10px;">
+                    </div>
+                    <div class='menulist'>
+                        <a class='item' href="../index.html">Home</a>
+                        <a class='item' href="./aboutus.html">About us</a>
+                        <a class='item' href="./contactus.html"">Contact</a>
+                        <a class='item' href=" ./product_and_Services.html">Product and Service</a>
+                        <a class='item'> How we work</a>
+                        <a class='item' href=" ./faq.html">FAQ</a>
+                        <a class='item' href="./earn_with_us.html">Earn with us</a>
+                    </div>
+                    <div class='mobileIcon'>Menu</div>
+                </div>
+            </div>
+        </Navbar>
+    </header>
+    <div class="mainSlider2" id="content">
+        <div class="mainSlider" id="mainSlider">
+            <img src="../assets/images/logo1.png"
+                style="width:200px; height:150px; margin-top: 5px; margin-left: 10px;">
+
+            <b style="text-align: center; background-color: yellow; padding: 10px;">Blending Innovation, Creativity and
+                Satisfaction</b>
+        </div>
+        <div class="major">
+            <div class="major2">
+
+                <h1>Earn With US</h1>
+                <p>There are 3 basic categories with which you can earn little amount of money while you work with us @
+                    HenOrch Alliance, just as our name implies, will align great resources all over the world, below are
+                    there categories of earning with us programe that are presently available</p>
+                <div>
+                    <h3>Affliate Programe/ Refer Programes</h3>
+                    <p>Earning online can never be so simple, as knowing who you sponsor, at HenOrch Alliance will give
+                        you the chance to refer someone or bring in a project and share the profit with us</p>
+                </div>
+
+                <div>
+                    <h3>Work from Home</h3>
+                    <p>With HenOrch Alliance, you as a graphic design, 3D Modelling experter, Web Designer, Logo
+                        Designer, Mobile Application Designer, Data Analyst and so on, can now visit our website to find
+                        jobs that are occassionally posted, price assign to the job and once the work is completed can
+                        send in your work and get instant payment </p>
+                </div>
+
+                <div>
+                    <h3>Advert Posting</h3>
+                    <p>Although this might seems little but we reward everyone that sign an agreement to always post our
+                        advert on their social netweork site such as whatapp status, facebook, instagram and so on </p>
+                </div>
+                <div>
+                    <h3>Bring an Idea and Partner with us</h3>
+                    <p>We are consumed with the feeling for creativity, innovation and satisfaction, do you have an
+                        idea? let us partner today and make create a world that help you achieve your desire</p>
+                </div>
+
+            </div>
+            <div class="major2">
+                <h1>Our Guide</h1>
+                <p style="text-align: justify;">Our aim is to render unique service that make our customers to feel
+                    satisfied, we work on daily bases to
+                    improve our services, with great focus on customer satisfaction, Being a customer oriented
+                    organization,
+                    we implement crerativity and innovation into our diverse services, Believe in satisfaction first
+                    that is
+                    why we do everything to make our customers happy and satisfied, @ HenOrch Alliance we are committed
+                    to
+                    satisfying your needs,</p>
+                <b style="text-align: end;">so visit us today @ HenOrch Alliance</b>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var Slider = document.getElementById('mainSlider');
+
+        Slider.style.backgroundImage = "url('../assets/images/earn.jpeg')";
+        Slider.style.backgroundSize = 'cover';
+        Slider.style.backgroundPosition = 'center'
+
+
+    </script>
+    <script type="module" src="pageslider.js"></script>
+</body>
+
+</html>

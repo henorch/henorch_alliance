@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../src/slide/slider.css">
+    <style>
+        .mainSlider2 {
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .mainSlider {
+            width: 55%;
+        }
+
+        .major {
+            width: 40%;
+            text-align: justify;
+        }
+
+        .major2 {
+            width: 100%;
+            text-align: justify;
+        }
+
+        @media screen and (max-width:468px) {
+            .mainSlider2 {
+                flex-direction: column;
+            }
+
+            .mainSlider,
+            .major {
+                width: 100%;
+            }
+
+        }
+
+        .panel {
+            background-color: green;
+            padding: 10px;
+            display: flex;
+            margin-top: 5px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #showInfo {
+            background-color: white;
+            opacity: 0.5;
+            height: 20;
+            width: 20;
+            border-radius: 50%;
+            border: none;
+        }
+
+        .slide_down {
+            padding: 10px;
+            display: none;
+            border: 1px solid black;
+        }
+
+        .panel:hover+.slide_down {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <!-- <div class="movable-div"></div> -->
+        <div class="mobileMenu">
+            <button id="closeMenu">X Close</button>
+            <a class='item' href="../index.html">Home</a>
+            <a class='item' href="./aboutus.html">About us</a>
+            <a class='item' href="./contactus.html"">Contact</a>
+            <a class='item' href=" ./product_and_Services.html">Product and Service</a>
+            <a class='item'> How we work</a>
+            <a class='item' href="./faq.html">FAQ</a>
+            <a class='item' href="./earn_with_us.html">Earn with us</a>
+        </div>
+        <Navbar>
+            <div class="mainNav2" id="mainNav2">
+                <div class='mainNav' id='mainNav'>
+                    <div><img src="../assets/images/logo1.png"
+                            style="width:110px; height:60px; margin-top: 5px; margin-left: 10px;">
+                    </div>
+                    <div class='menulist'>
+                        <a class='item' href="../index.html">Home</a>
+                        <a class='item' href="./aboutus.html">About us</a>
+                        <a class='item' href="./contactus.html"">Contact</a>
+                            <a class='item' href=" ./product_and_Services.html">Product and Service</a>
+                        <a class='item'> How we work</a>
+                        <a class='item'>FAQ</a>
+                        <a class='item' href="./earn_with_us.html">Earn with us</a>
+                    </div>
+                    <div class='mobileIcon'>Menu</div>
+                </div>
+            </div>
+        </Navbar>
+    </header>
+
+    <div class="mainSlider2" id="content">
+        <div class="mainSlider" id="mainSlider">
+            <img src="../assets/images/logo1.png"
+                style="width:200px; height:150px; margin-top: 5px; margin-left: 10px;">
+
+            <b style="text-align: center; background-color: yellow; padding: 10px;">Blending Innovation, Creativity and
+                Satisfaction</b>
+        </div>
+        <div class="major">
+            <div class="major2">
+                <h1>Frequently Ask Questions</h1>
+                <div class="panel">
+                    <h3>What is HenOrch Alliance?</h3> <button id="showInfo">></button>
+                </div>
+                <div class="slide_down">
+                    <p>HenOrch Alliance is a collection of companies, carrying out several business actvities,
+                        formed under one name know as HenOrch Alliance
+                    </p>
+                </div>
+                <div class="panel">
+                    <h3>What we do?</h3> <button id="showInfo">></button>
+                </div>
+                <div class="slide_down">
+                    <p style="text-align: justify;">@ HenOrch Alliance, we specialize in providin techbase solution,
+                        such as
+                        web-design, frontend and backend design, Mobile application development, Data analysis and
+                        Visualization, as well as printing press such as graphic design, indentity branding, promotioal,
+                        flyers and label, banner and other signages</p>
+                    <p> we also combine other activitied such sales of electronics gadgetes, computer and phone
+                        accessories
+                        as well as laundry </p>
+                </div>
+
+                <div class="panel">
+                    <h3>What set us apart?</h3> <button id="showInfo">></button>
+                </div>
+                <div class="slide_down">
+                    <p>Our Creativity and innovation blended with professionalism for the purpose of givng maximum
+                        satisfaction set up apart from others, guided by the desire to provide maximum satisfaction, we
+                        keep our customers and client close to our heart, as to provide a well trailored services, the
+                        core reason we are known as customer oriented organization</p>
+
+                    <p>We are open to doing business with you and your company as well as potential investors, because
+                        at the running of other activities id believe in Alliance</p>
+                </div>
+                <div class="panel">
+                    <h3>Can you partner with us?</h3> <button id="showInfo">></button>
+                </div>
+                <div class="slide_down">
+                    <p>Yes, you can be part of our organization, through creative and innovative idea, just as our name
+                        implies we have constantly annex superior resource and utilize the contribution for our
+                        development, while creating and environment for everyone to grow and developp</p>
+
+
+                </div>
+                <div class="panel">
+                    <h3>How can I earn with HenOrch Alliance</h3> <button id="showInfo">></button>
+                </div>
+                <div class="slide_down">
+                    <p>We post work at job on our website, that you can complete and earn a little amount of money, you
+                        should vist our earn with us page to learn more</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var Slider = document.getElementById('mainSlider');
+
+        Slider.style.backgroundImage = "url('../assets/images/quest.jpg";
+        Slider.style.backgroundSize = 'cover';
+        Slider.style.backgroundPosition = 'center'
+
+
+    </script>
+    <script type="module" src="pageslider.js"></script>
+</body>
+
+</html>
