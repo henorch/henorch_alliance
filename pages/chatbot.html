@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .botname {
+            width: 100vw;
+            height: 10vh;
+            padding: 10px;
+            background-color: blue;
+        }
+
+        .message_container {
+            width: 100vw;
+            height: 70vh;
+        }
+
+        .input_container {
+            border: 1px solid black;
+            width: 100vw;
+            height: 15vh;
+            border-radius: 50px;
+        }
+
+        .input_container>input {
+            width: 85%;
+            height: 90%;
+            margin: 5px;
+            border-radius: 50px;
+            padding-left: 10px;
+            border: none;
+        }
+
+        .input_container>button {
+            width: 80px;
+            height: 80px;
+            border: none;
+            background-color: blue;
+            box-shadow: 2px 2px 2px solid grey;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="botname">
+        <h2>HenOrch</h2>
+    </div>
+    <div class="message_container">
+        <p>My name is HenOrch you can ask me anything about this comapny</p>
+    </div>
+    <form class="input_container">
+        <input type="text" placeholder="please enter your question" /><button type="submit">submit</button>
+    </form>
+    <script type="importmap">
+        {
+            "import":{
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+            }
+        }
+    </script>
+    <script type="module" src="../src/chatbot.js"></script>
+</body>
+
+</html>
