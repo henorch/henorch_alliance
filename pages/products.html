@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../src/slide/slider.css">
+    <style>
+
+        .empty{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            align-items: center;
+        }
+        .fillCart{
+            height: 120px;
+            display: flex;
+            padding: 2px;
+            justify-content: space-around;
+            border-bottom: 1px;
+            margin: 5px;
+            box-shadow: 2px 2px 2px grey;
+        }
+        .fillCart > details{
+            display:flex;
+            flex-direction:column;
+        }
+        .fillCart > img {
+            width:40%;
+            height:100%;
+        }
+        .mainSlider2 {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .mainSlider3 {
+            width: 70%;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .mainSlider {
+            width: 55%;
+        }
+
+        .major {
+            width: 40%;
+            text-align: justify;
+        }
+
+        .major2 {
+            width: 100%;
+            text-align: justify;
+        }
+
+        #product-list{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+
+        .product{
+            background-color: white;
+            height: 400px;
+            width: 300px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px grey;
+        }
+        .product  img {
+            width: 100%;
+            height: 60%;
+        }
+
+        .cart_icon{
+            z-index: 1;
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            box-shadow: 2px 2px 2px grey;
+            padding:20px;
+            border-radius: 50%;
+        }
+
+        .cart_item{
+            position: fixed;
+            display: none;
+            width: 400px;
+            background-color: white;
+            z-index: 1px;
+            box-shadow: 2px 2px 2px 4px grey;
+            min-height: 80%;
+            bottom: 65px;
+            right: 20px;
+
+        }
+        @media screen and (max-width:468px) {
+            .mainSlider2 {
+                flex-direction: column;
+            }
+            .cart_item{
+                width: auto;
+            }
+
+            .mainSlider,
+            .mainSlider3,
+            .major {
+                width: 100%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <!-- <div class="movable-div"></div> -->
+        <div class="mobileMenu">
+            <button id="closeMenu">X Close</button>
+            <a class='item' href="../index.html">Home</a>
+            <a class='item' href="./aboutus.html">About us</a>
+            <a class='item' href="./contactus.html"">Contact</a>
+            <a class='item' href=" ./services.html">Services</a>
+            <a class="item" href="./products.html">products</a>
+            <a class='item'> How we work</a>
+            <a class='item' href="./faq.html">FAQ</a>
+            <a class='item' href="./earn_with_us.html">Earn with us</a>
+        </div>
+        <Navbar>
+            <div class="mainNav2" id="mainNav2">
+                <div class='mainNav' id='mainNav'>
+                    <div><img src="../assets/images/logo1.png"
+                            style="width:110px; height:60px; margin-top: 5px; margin-left: 10px;">
+                    </div>
+                    <div class='menulist'>
+                        <a class='item' href="../index.html">Home</a>
+                        <a class='item' href="./aboutus.html">About us</a>
+                        <a class='item' href="./contactus.html"">Contact</a>
+                        <a class='item' href=" ./services.html">Services</a>
+                        <a class="item" href="./products.html">products</a>
+                        <a class='item'> How we work</a>
+                        <a class='item' href=" ./faq.html">FAQ</a>
+                        <a class='item' href="./earn_with_us.html">Earn with us</a>
+                    </div>
+                    <div class='mobileIcon'>Menu</div>
+                </div>
+            </div>
+        </Navbar>
+    </header>
+    <div>
+        <div class="mainSlider2" id="content">
+           
+        <h1>Available Products</h1>
+        <div id="product-list">
+        </div>
+
+        <div class="cart_icon" id="cart_icon">My Cart<span id="count" style="font-size: 40px;">0</span></div>
+        
+        <div class="cart_item" id="cart_item">
+        </div>
+    </div>
+  
+    <script type="module" src="pageslider.js"></script>
+
+    <script type="module" src="../script.js"></script>
+    <script type="module">
+    
+     
+    </script>
+
+
+
+
+
+
+    <script type="module">
+        import  Product from '../assets/products/products.js';
+        import {addItemToCart, removeItemFromCart} from '../assets/products/carts.js'
+        const cartKey = 'shoppingCart';
+        
+        
+        
+        const productList = document.getElementById('product-list');
+        const cartItem = document.getElementById('cart_item');
+        const cartdiv = document.getElementById('cart_icon')
+        
+        function getCart(){
+            return JSON.parse(localStorage.getItem(cartKey)) || []
+        }
+
+        let cart = getCart();
+       
+        updateCartCount(cart)
+
+        
+        function updateCartCount(cart){
+            cart = getCart();
+            const countItem = document.getElementById('count'); 
+            countItem.textContent = cart.length;
+        }
+
+
+       
+
+function displayCart(cart) {
+    cart = getCart();
+    
+    const cartItem = document.getElementById('cart_item'); 
+    cartItem.innerHTML = "";
+
+    if (cart.length === 0) {
+     
+        const emptyDiv = document.createElement('div');
+        emptyDiv.className = 'empty';
+        emptyDiv.innerHTML = `
+            <h3>Your Cart is currently empty</h3>
+            <p>Visit our products to make an order</p>
+        `;
+        cartItem.appendChild(emptyDiv);
+    } else {
+        let totalPrice = 0;
+        cart.forEach(cart => {
+            const itemDiv = document.createElement('div');
+            itemDiv.innerHTML = `
+            <div class="fillCart" id=${cart.id}>
+                <img src=${cart.image} alt='not available'/>
+                <div class='details'>
+                <b>${cart.name}</b><br/>
+                <b style="font-size:2.5em">${cart.price}</b><br/>
+                <i>Quantity: ${cart.quantity}</i><br/>
+                <button class='remove-item' data-id=${cart.id}>Remove</button> 
+                </div>
+                </div>
+            `;
+            
+            
+            cartItem.appendChild(itemDiv);
+            totalPrice += cart.price * cart.quantity;
+            
+        });
+
+        const bottomDiv = document.createElement('div');
+        bottomDiv.className = 'total-price';
+        bottomDiv.style.position = "absolute";
+        bottomDiv.style.left=0;
+        bottomDiv.style.bottom=0;
+        bottomDiv.style.width='95%';
+        bottomDiv.style.marginTop = '20px';
+        bottomDiv.style.padding = '10px';
+        bottomDiv.style.backgroundColor = 'lightgray';
+        bottomDiv.innerHTML = `
+            <h2>Total Price: $${totalPrice}</h2>
+            
+        <button id="place order"> Place an Order</button>
+        `;
+        cartItem.appendChild(bottomDiv);
+
+        document.querySelectorAll('.remove-item').forEach(button => {
+            button.addEventListener('click', function(){
+                const id = parseInt(this.getAttribute('data-id'));
+               
+                removeItemFromCart(id)
+                updateCartCount(cart);
+                displayCart(cart)
+            })
+        })
+    }
+}
+      
+        displayCart(cart)
+
+        cartdiv.addEventListener('click', function() {
+           
+            if (cartItem.style.display === 'none' || cartItem.style.display === '') {
+                cartItem.style.display = 'block';
+            } else {
+                cartItem.style.display = 'none';
+            }
+        });
+        
+
+        function displayProducts(products) {
+            productList.innerHTML = '';
+
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product';
+                
+                productDiv.innerHTML = `
+                    <img src=${product.image} alt=${product.image}>
+                    
+                    <b><i>${product.name}</i></b><br/>
+                    <b style="font-size:2.5em">Price: ${product.price}</b><br/>
+                    <i>${product.description}</i>
+                    <button class='add-product' data-image=${product.image} data-id=${product.id} data-name=${product.name} data-price=${product.price}> Add to Cart</button>
+                    <button class="order-button" data-name="${product.name}" data-price="${product.price}">Order now</button>
+                `;
+
+                productList.appendChild(productDiv);
+            });
+
+            document.querySelectorAll(".add-product").forEach(button => {
+                button.addEventListener('click', function(){
+                    const id = parseInt(this.getAttribute('data-id'));
+                    const name = this.getAttribute('data-name');
+                    const image = this.getAttribute('data-image');
+                    const price = parseFloat(this.getAttribute('data-price'));
+
+                    addItemToCart({
+                        image,
+                        id,
+                        name,
+                        price
+                    })
+                    cart = getCart();
+                    
+                    updateCartCount(cart);
+                    displayCart(cart)
+                    
+                })
+            })
+
+            
+
+            
+            document.querySelectorAll('.order-button').forEach(button => {
+            button.addEventListener('click', function() {
+            const productName = this.getAttribute('data-name');
+            const productPrice = this.getAttribute('data-price');
+
+            // Construct WhatsApp URL with a pre-filled message
+            const phoneNumber = '+2347069458962'; // Replace with your phone number
+            const message = encodeURIComponent(`I'd like to order ${productName} for ${productPrice}.`);
+            const url = `https://wa.me/${phoneNumber}?text=${message}`;
+
+            // Open the WhatsApp URL in a new tab
+            window.open(url, '_blank');
+        });
+    });
+        }
+
+        displayProducts(Product);
+    </script>
+</body>
+
+</html>
