@@ -168,7 +168,7 @@
     <div>
         <div class="mainSlider2" id="content">
            
-        <h1>Available Products</h1>
+        <h1 style="margin-top: 50px;">Available Products</h1>
         <div id="product-list">
         </div>
 
@@ -305,7 +305,7 @@ function displayCart(cart) {
                 productDiv.className = 'product';
                 
                 productDiv.innerHTML = `
-                    <img src=${product.image} alt=${product.image}>
+                    <img style="height: 200px;" src=${product.image} alt=${product.image}>
                     
                     <b><i>${product.name}</i></b><br/>
                     <b style="font-size:2.5em">Price: ${product.price}</b><br/>
