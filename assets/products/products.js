@@ -63,21 +63,21 @@ const Product = [
         description:"Quality industrial Bardefu stainless steel blender, for complete blending experiences"
     },
     {
-        id:9,
+        id:10,
         name:"Hot Plate 1 Face",
         image: "../assets/images/products/1facehp.jpg",
         price:19000,
         description:"A well ceramic insulated single face eletric stove for fast cooking"
     },
     {
-        id:9,
+        id:11,
         name:" Kenwood Yam Pounder",
         image: "../assets/images/products/yanpounder.jpg",
         price:38000,
         description:"Kenwood Double speed electric meat grinder, Yam pounder food machine, right for your kitchen"
     },
     {
-        id:9,
+        id:12,
         name:"Rechargeable Table fan",
         image: "../assets/images/products/rechargeablefan.jpg",
         price:20000,
