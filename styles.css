@@ -33,8 +33,17 @@ body {
     padding: 3px;
     background-color: white;
     text-align: center;
+     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 
 }
+
+
+.service_sub:hover {
+    transform: scale(1.05);
+}
+
 
 .service_sub>img {
     height: 300px;
